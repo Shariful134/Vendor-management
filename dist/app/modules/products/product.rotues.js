@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProductRouters = void 0;
+const express_1 = __importDefault(require("express"));
+const product_validation_1 = require("./product.validation");
+const ValidateRequest_1 = __importDefault(require("../../../middlewares/ValidateRequest"));
+const product_controllers_1 = require("./product.controllers");
+const uploads_1 = require("../../../utils/uploads");
+const auth_1 = __importDefault(require("../../../middlewares/auth"));
+const parsBody_1 = require("../../../utils/parsBody");
+const router = express_1.default.Router();
+router.post("/", (0, auth_1.default)("Admin", "Vendor"), uploads_1.fileUploader.upload.array("image"), parsBody_1.parseBodyData, (0, ValidateRequest_1.default)(product_validation_1.productValidation.createProductSchema), product_controllers_1.productControllers.createProduct);
+router.get("/", product_controllers_1.productControllers.getAllProduct);
+router.get("/:id", product_controllers_1.productControllers.getSingleProduct);
+router.patch("/:id", (0, ValidateRequest_1.default)(product_validation_1.productValidation.updateProductSchema), product_controllers_1.productControllers.updateProduct);
+router.delete("/:id", product_controllers_1.productControllers.deleteProduct);
+exports.ProductRouters = router;
