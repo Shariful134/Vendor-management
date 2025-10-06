@@ -1,0 +1,487 @@
+{
+	"info": {
+		"_postman_id": "4bfb3d9f-a20e-4450-9f5a-0d9a962b26e7",
+		"name": "VENDOR-MANAGMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39768585",
+		"_collection_link": "https://shariful-islam-2255.postman.co/workspace/Shariful-Islam-Workspace~d409c9d8-8e5f-4da4-81d4-8127031613fb/collection/39768585-4bfb3d9f-a20e-4450-9f5a-0d9a962b26e7?action=share&source=collection_link&creator=39768585"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \r\n   \r\n    \"name\": \"Shariful-vendor\",\r\n    \"email\": \"shariful@example.com\",\r\n    \"password\": \"shariful!23\",\r\n    \"role\": \"Vendor\",\r\n    \"shopName\": \"Vendor Shop\",\r\n    \"address\": \"123 Vendor Street\",\r\n    \"phoneNumber\": \"+8801712345678\",\r\n  \r\n  \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/register-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"shariful32212@gmail.com\",\r\n    \"password\": \"Shariful2!23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1MGY0ZDdmZGNkMDFlNzk4M2NkMSIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTJAZ21haWwuY29tIiwicm9sZSI6IlZlbmRvciIsImlhdCI6MTc1OTczMDQ3OCwiZXhwIjoxNzYyMzIyNDc4fQ.fMBmHkdrowEUYniS8b1NhX-9IVcI4u7qKEk-9_7XR6g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/get?searchTerm=shariful32212@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"get"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "shariful32212@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingle-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1N2Q3Yjc4Zjk4MDY2NjI0MTk3YiIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTRAZ21haWwuY29tIiwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzU5NzI5NzgzLCJleHAiOjE3NjIzMjE3ODN9.54ahnibY_pxSnc1WetbGjlTmXDotQE0YZTVnAfkJE4o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/get/68e357d7b78f98066624197b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"get",
+								"68e357d7b78f98066624197b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1MDc0NjM2ZmMxMTc2NzM3Mjg1ZSIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTNAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzU5NzMwNDI1LCJleHAiOjE3NjIzMjI0MjV9.OE-j22IummlCzJ_IVBZwdvRSGzawURP1FyBTBC0T6iw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/delete/68e357d7b78f98066624197b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"delete",
+								"68e357d7b78f98066624197b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logOut-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"shariful32212@gmail.com\",\r\n    \"password\":\"Shariful2!23\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/login-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create-product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1MGY0ZDdmZGNkMDFlNzk4M2NkMSIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTJAZ21haWwuY29tIiwicm9sZSI6IlZlbmRvciIsImlhdCI6MTc1OTczMDQ3OCwiZXhwIjoxNzYyMzIyNDc4fQ.fMBmHkdrowEUYniS8b1NhX-9IVcI4u7qKEk-9_7XR6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Apple MacBook Pro 16",
+									"type": "text"
+								},
+								{
+									"key": "vendor",
+									"value": "68e350f4d7fdcd01e7983cd1",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "250000",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Softvence/Downloads/download (2).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1N2Q3Yjc4Zjk4MDY2NjI0MTk3YiIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTRAZ21haWwuY29tIiwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzU5NzI5NzgzLCJleHAiOjE3NjIzMjE3ODN9.54ahnibY_pxSnc1WetbGjlTmXDotQE0YZTVnAfkJE4o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSigle-product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1N2Q3Yjc4Zjk4MDY2NjI0MTk3YiIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTRAZ21haWwuY29tIiwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzU5NzI5NzgzLCJleHAiOjE3NjIzMjE3ODN9.54ahnibY_pxSnc1WetbGjlTmXDotQE0YZTVnAfkJE4o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/get/68e357d7b78f98066624197b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"get",
+								"68e357d7b78f98066624197b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1MGY0ZDdmZGNkMDFlNzk4M2NkMSIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTJAZ21haWwuY29tIiwicm9sZSI6IlZlbmRvciIsImlhdCI6MTc1OTczMDQ3OCwiZXhwIjoxNzYyMzIyNDc4fQ.fMBmHkdrowEUYniS8b1NhX-9IVcI4u7qKEk-9_7XR6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Apple MacBook Pro 44",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/product/update/68e357d7b78f98066624197b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"update",
+								"68e357d7b78f98066624197b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create-order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1MGY0ZDdmZGNkMDFlNzk4M2NkMSIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTJAZ21haWwuY29tIiwicm9sZSI6IlZlbmRvciIsImlhdCI6MTc1OTczMDQ3OCwiZXhwIjoxNzYyMzIyNDc4fQ.fMBmHkdrowEUYniS8b1NhX-9IVcI4u7qKEk-9_7XR6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Apple MacBook Pro 16",
+									"type": "text"
+								},
+								{
+									"key": "vendor",
+									"value": "68e350f4d7fdcd01e7983cd1",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "250000",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Softvence/Downloads/download (2).jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1N2Q3Yjc4Zjk4MDY2NjI0MTk3YiIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTRAZ21haWwuY29tIiwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzU5NzI5NzgzLCJleHAiOjE3NjIzMjE3ODN9.54ahnibY_pxSnc1WetbGjlTmXDotQE0YZTVnAfkJE4o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingle-order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTM1N2Q3Yjc4Zjk4MDY2NjI0MTk3YiIsInVzZXJFbWFpbCI6InNoYXJpZnVsMzIyMTRAZ21haWwuY29tIiwicm9sZSI6IkN1c3RvbWVyIiwiaWF0IjoxNzU5NzI5NzgzLCJleHAiOjE3NjIzMjE3ODN9.54ahnibY_pxSnc1WetbGjlTmXDotQE0YZTVnAfkJE4o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/get/68e357d7b78f98066624197b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"get",
+								"68e357d7b78f98066624197b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
