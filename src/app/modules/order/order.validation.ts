@@ -10,7 +10,7 @@ const orderProductSchema = z.object({
 // Create Order Schema
 export const createOrderSchema = z.object({
   body: z.object({
-    orderId:z.string(),
+    orderId:z.string().optional(),
     customer: z.string().nonempty("Customer ID is required"),
     vendors: z.array(z.string().nonempty("Vendor ID is required")).nonempty("At least one vendor is required"),
     products: z.array(orderProductSchema).nonempty("Products cannot be empty"),
